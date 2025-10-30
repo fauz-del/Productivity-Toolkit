@@ -215,7 +215,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/Productivity-kit /image/peach.webp'); /* set your image here */
+  background-image: url('image/peach.webp'); /* set your image here */
   background-size: cover;      /* cover entire area */
   background-position: center; /* center the image */
   background-repeat: no-repeat;
