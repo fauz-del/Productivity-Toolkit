@@ -33,11 +33,12 @@ body {
   min-height: 100vh;
   outline: px solid red;
   padding: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
-  position: absolute;
+  position: fixed;
   width: 70px;
   min-height: 100vh;
   background: var(--panel-color);
@@ -210,12 +211,44 @@ button:active {
   transition: color 0.3s ease;
 }
 
+/*music*/
+.music-player {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.6rem;
+}
+
+.music-player button {
+  background: var(--icon-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 15px var(--button-shadow), -5px -5px 15px var(--light-shadow);
+  transition: all 0.3s ease;
+}
+
+.music-player button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 10px var(--button-shadow), -3px -3px 10px var(--light-shadow);
+}
+
+.music-player button i {
+  font-size: 1.5rem;
+  color: var(--panel-color);
+}
+
+
 /* ===== TOP BAR ===== */
 .top-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/Productivity-kit /image/peach.webp'); /* set your image here */
+  background-image: url('image/peach.webp'); /* set your image here */
   background-size: cover;      /* cover entire area */
   background-position: center; /* center the image */
   background-repeat: no-repeat;
@@ -299,8 +332,12 @@ button:active {
 
 .tool-card h3 {
   margin: 8px 0 5px;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
+.tool-card  {
+  font-size: 1.3rem;
+}
+
 
 /* Add custom accent colors for each */
 .note-card i { color: #ffb400; }
@@ -308,86 +345,83 @@ button:active {
 .weather-card i { color: #60a5fa; }
 .usage-card i { color: #f87171; }
 
-/*Bottom Dashboard*/
+/* ===== CALENDAR CARD ===== */
 .bottom-dashboard {
-  display: flex;
-  gap: 1rem;
-  margin: 5rem 2rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.bottom-dashboard div {
-  flex: 1 1 300px;
-  background: var(--background-color);
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 6px 6px 15px var(--button-shadow),
-              -6px -6px 15px var(--light-shadow);
-  transition: all 0.3s ease;
-}
-
-.bottom-dashboard div:hover {
-  transform: translateY(-5px);
-  box-shadow: 3px 3px 10px var(--button-shadow),
-              -3px -3px 10px var(--light-shadow);
-}
-
-.calendar-card table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 0.5rem;
-}
-
-.calendar-card th, .calendar-card td {
-  text-align: center;
-  padding: 5px;
-  font-size: 0.85rem;
-}
-
-.calendar-card td.today {
-  background-color: #254;
-  color: #fff;
-  border-radius: 50%;
-  height: 5px;
-  width: 5px;
-}
-
-.quote-card p {
-  font-style: italic;
-  margin-top: 0.5rem;
-  color: var(--panel-color);
-}
-
-/*music*/
-.music-player {
-  position: absolute;
-  bottom: 2rem;
-  left: 0.6rem;
-}
-
-.music-player button {
-  background: var(--icon-color);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 5px 5px 15px var(--button-shadow), -5px -5px 15px var(--light-shadow);
-  transition: all 0.3s ease;
 }
 
-.music-player button:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 3px 10px var(--button-shadow), -3px -3px 10px var(--light-shadow);
+.calendar.card,
+.quote.card{
+  padding: 1rem 0;
+  border-radius: 20px;
+  background: var(--background-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.music-player button i {
+.calendar.card h3,
+.quote.card{
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #333;
+  font-size: 2rem;
+}
+
+.calendar{
+  width: 93%;
+  border-collapse: collapse;
+  table-layout: fixed; /* ensures equal width columns */
+  text-align: center;
+  margin: 2rem;
+}
+
+/* Day headers */
+.calendar th {
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  width: calc(93% / 7); /* equal width for all days */
   font-size: 1.5rem;
-  color: var(--panel-color);
+}
+
+/* Calendar days */
+.calendar td {
+  padding: 1rem 0;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  width: calc(93% / 7); /* equal width for all dates */
+  height: 2rem; /* equal height for all date cells */
+  font-size: 1.2rem;
+}
+
+/* Hover + Today styling */
+.calendar td:hover {
+  background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.calendar td.today {
+  background: #999;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px 0;
+  font-size: 1rem;
+}
+  
+.quote{
+  width: 93%;
+  margin: 1.8rem;
+}
+
+.quote h3{
+  text-align: left;
+  padding: 0.9rem;
+}
+
+.quote p{
+  text-align: left;
+  padding: 0.6rem;
+  font-size: 1rem;
 }
 
 
@@ -401,10 +435,11 @@ body {
 }
 
 .cursor-pointer {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .sidebar {
+  position: fixed;
     width: 50px;
   }
 
@@ -426,7 +461,7 @@ body {
 }
   
 .sidebar ul li i {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   }
   
@@ -448,7 +483,7 @@ body {
 
 .mode {
   position: fixed;
-right: 1rem;
+right: 2rem;
 top: 1rem;
 }
   
@@ -458,7 +493,7 @@ top: 1rem;
 }
 
 .mode-toggle i {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .music-player {
@@ -500,13 +535,71 @@ padding: 1rem;
   margin: 1rem;
 }
 
+.tool-card i {
+  font-size: 1.7rem;
+}
+
+.tool-card h3 {
+  margin: 4px 0 2px;
+  font-size: 0.9rem;
+}
+.tool-card  {
+  font-size: 0.6rem;
+}
+
+.apps {
+  margin-top: 1.7rem;
+}
+
 .apps h2{
-  margin: 1rem;
+  margin: 0.9rem;
+  font-size: 0.9rem;
+}
+  
+.calendar {
+    width: 95%;
+    margin: 0.5rem;
+  }
+  
+  .calendar.card h3 {
+  font-size: 1.1rem;
+}
+  
+.caledar th {
+  padding: 0.3rem 0;
+  font-size: 0.6rem;
+}
+
+/* Calendar days */
+.calendar td {
+  padding: 0.3rem 0;
+  font-size: 0.5rem;
+  height: 0.3rem;
+}
+
+.calendar td.today {
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.quote{
+  width: 95%;
+  margin: 0.5rem;
+  
+}
+
+.quote h3{
+  text-align: left;
+  padding: 0.6rem;
   font-size: 1rem;
 }
 
-.bottom-dashboard {
-  margin: 1rem;
-  flex: 1 1 150px;
+.quote p{
+  text-align: left;
+  padding: 0.2rem;
+  font-size: 0.7rem;
 }
-}
+  }
+
+  
+
