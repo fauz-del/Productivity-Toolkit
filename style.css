@@ -215,7 +215,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('image/peach.webp'); /* set your image here */
+  background-image: url('/Productivity-kit /image/peach.webp'); /* set your image here */
   background-size: cover;      /* cover entire area */
   background-position: center; /* center the image */
   background-repeat: no-repeat;
@@ -312,7 +312,7 @@ button:active {
 .bottom-dashboard {
   display: flex;
   gap: 1rem;
-  margin: 2rem;
+  margin: 5rem 2rem;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -476,11 +476,13 @@ top: 1rem;
   font-size: 1rem;
 }
 
+
 .top-bar {
 border-radius: 1rem;
 margin: 1rem;
 padding: 1rem;
 }
+
 
 .datetime h2 {
   font-size: 2rem;
@@ -493,12 +495,18 @@ padding: 1rem;
 
 .tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  margin: 7rem 1rem;
+  margin: 1rem;
 }
 
-apps h2{
+.apps h2{
+  margin: 1rem;
   font-size: 1rem;
-  }
+}
+
+.bottom-dashboard {
+  margin: 1rem;
+  flex: 1 1 150px;
+}
 }
