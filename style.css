@@ -317,7 +317,7 @@ button:active {
   justify-content: space-between;
 }
 
-.bottom-dashboard > div {
+.bottom-dashboard div {
   flex: 1 1 300px;
   background: var(--background-color);
   padding: 1.5rem;
@@ -327,7 +327,7 @@ button:active {
   transition: all 0.3s ease;
 }
 
-.bottom-dashboard > div:hover {
+.bottom-dashboard div:hover {
   transform: translateY(-5px);
   box-shadow: 3px 3px 10px var(--button-shadow),
               -3px -3px 10px var(--light-shadow);
