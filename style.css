@@ -562,13 +562,13 @@ padding: 1rem;
     margin: 0.5rem;
   }
   
-  .calendar.card h3 {
+.calendar.card h3 {
   font-size: 1.1rem;
 }
   
-.caledar th {
+.calendar th {
   padding: 0.3rem 0;
-  font-size: 0.4rem;
+  font-size: 0.6rem;
 }
 
 /* Calendar days */
