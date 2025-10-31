@@ -1,154 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Productivity-Toolkit Dashboard</title>
 
   <!-- Font Awesome -->
-  <link
-    rel="preload"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   </noscript>
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="container">
     <!-- Navbar -->
 
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-     <nav class="navbar">
-      <i class="fa fa-bars cursor-pointer" id="menu-icon"></i>
-     </nav>
+      <nav class="navbar">
+        <i class="fa fa-bars cursor-pointer" id="menu-icon"></i>
+      </nav>
 
 
       <ul>
         <li><a href="#">
-          <i class="fa-solid fa-house"></i>
-          <span class="link-name">Dashboard</span>
-        </a></li>
+            <i class="fa-solid fa-house"></i>
+            <span class="link-name">Dashboard</span>
+          </a></li>
         <li><a href="#">
-          <i class="fa fa-sticky-note"></i>
-          <span class="link-name">Note</span>
-        </a></li>
+            <i class="fa fa-sticky-note"></i>
+            <span class="link-name">Note</span>
+          </a></li>
         <li><a href="#">
-          <i class="fa fa-list-check"></i>
-          <span class="link-name">To-do list</span>
-        </a></li>
+            <i class="fa fa-list-check"></i>
+            <span class="link-name">To-do list</span>
+          </a></li>
         <li><a href="#">
-          <i class="fa fa-cloud-sun"></i>
-          <span class="link-name">Weather</span>
-        </a></li>
+            <i class="fa fa-cloud-sun"></i>
+            <span class="link-name">Weather</span>
+          </a></li>
         <li><a href="#">
-          <i class="fa fa-chart-line"></i>
-          <span class="link-name">App Usage</span>
-        </a></li>
+            <i class="fa fa-chart-line"></i>
+            <span class="link-name">App Usage</span>
+          </a></li>
       </ul>
-      
+
       <div class="music-player">
-  <audio id="bg-music" loop>
-    <source src="/Productivity-kit /music/miss korea.mp3">
-    
-  </audio>
-  <button id="music-toggle">
-    <i class="fa-solid fa-play"></i>
-  </button>
-</div>
-      
-      
+        <audio id="bg-music" loop>
+          <source src="/Productivity-kit /music/miss korea.mp3">
+
+        </audio>
+        <button id="music-toggle">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+
     </aside>
 
     <!-- Main Content -->
     <section class="content">
       <nav class="nav">
-         <div class="search-box">
-           <i class="fa-solid fa-magnifying-glass icon"></i>
-          <input type="text" placeholder = "Search here....">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass icon"></i>
+          <input type="text" placeholder="Search here....">
         </div>
       </nav>
-      
+
       <div class="mode">
         <button class="mode-toggle">
           <i class="fa-solid fa-moon"></i>
-       </button>
+        </button>
       </div>
-      
-  
-  <header class="top-bar">
-    <div class="datetime">
-      <h2 id="time"></h2>
-      <p id="date"></p>
-    </div>
-  </header>
 
-  
-  
-  
-<div class="apps">
-  <h2>Apps</h2>
-  <div class="tool-grid">
-    <div class="tool-card note-card">
-      <i class="fa fa-sticky-note"></i>
-      <h3>Notes</h3>
-      <p>Take quick notes and ideas.</p>
-    </div>
-    <div class="tool-card todo-card">
-      <i class="fa fa-list-check"></i>
-      <h3>To-Do List</h3>
-      <p>Organize your daily tasks.</p>
-    </div>
-    <div class="tool-card weather-card">
-      <i class="fa fa-cloud-sun"></i>
-      <h3>Weather</h3>
-      <p>Check today’s forecast.</p>
-    </div>
-    <div class="tool-card usage-card">
-      <i class="fa fa-chart-line"></i>
-      <h3>App Usage</h3>
-      <p>Track your app activity.</p>
-    </div>
-  </div>
-</div
-  
-  
-  <div class="bottom-dashboard">
-  <!-- Mini Calendar -->
-  <div class="calendar card">
-    <h3>Mini Calendar</h3>
-    <table class="calendar">
-      <thead>
-        <tr>
-          <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-        </tr>
-      </thead>
-      <tbody id="calendar-body">
-        <!-- JavaScript will populate days -->
-      </tbody>
-    </table>
-  </div>
 
-  <!-- Motivational Quote -->
-  <div class="quote card">
-    <h3>Motivational Quote</h3>
-    <p id="quote-text">Loading inspirational quote...</p>
-  </div>
-</div>
-  
-</section>
+      <header class="top-bar">
+        <div class="datetime">
+          <h2 id="time"></h2>
+          <p id="date"></p>
+        </div>
+      </header>
+
+
+
+
+      <div class="apps">
+        <h2>Apps</h2>
+        <div class="tool-grid">
+          <div class="tool-card note-card">
+            <i class="fa fa-sticky-note"></i>
+            <h3>Notes</h3>
+            <p>Take quick notes and ideas.</p>
+          </div>
+          <div class="tool-card todo-card">
+            <a href="todoapp.htm">
+              <i class="fa fa-list-check"></i>
+              <h3>To-Do List</h3>
+              <p>Organize your daily tasks.</p>
+            </a>
+          </div>
+          <div class="tool-card weather-card">
+            <i class="fa fa-cloud-sun"></i>
+            <h3>Weather</h3>
+            <p>Check today’s forecast.</p>
+          </div>
+          <div class="tool-card usage-card">
+            <i class="fa fa-chart-line"></i>
+            <h3>App Usage</h3>
+            <p>Track your app activity.</p>
+          </div>
+        </div>
+      </div <div class="bottom-dashboard">
+      <!-- Mini Calendar -->
+      <div class="calendar card">
+        <h3>Mini Calendar</h3>
+        <table class="calendar">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body">
+            <!-- JavaScript will populate days -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Motivational Quote -->
+      <div class="quote card">
+        <h3 class="quote-header">Motivational Quote</h3>
+        <p id="quote-text">Loading inspirational quote...</p>
+      </div>
+      </div>
+
+    </section>
   </main>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
-    </html>
+
+</html>
