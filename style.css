@@ -637,3 +637,8 @@ button:active {
   display: flex;
   justify-content: center;
 }
+
+.todo-anchor {
+  text-decoration: none;
+  color: black;
+}
