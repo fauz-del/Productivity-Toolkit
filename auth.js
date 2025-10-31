@@ -22,18 +22,19 @@ loginForm.addEventListener("submit", (e) => {
 
   const email = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value.trim();
-  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedUser = JSON.parse(globalThis.localStorage.getItem("user")) || []; // if its null respond with empty []
 
   if (!email || !password) {
-    alert("Please fill out all fields.");
+    // globalThis lets the code run in outside of the web environments which is more universal
+    globalThis.alert("please fill-out all the fields");
     return;
   }
 
   if (storedUser && storedUser.email === email && storedUser.password === password) {
-    alert("Welcome back, " + storedUser.name + "!");
-    window.location.href = "dashboard.html";
+    globalThis.alert("Welcome back, " + storedUser.name + "!");
+    globalThis.location.href = "dashboard.html";
   } else {
-    alert("Invalid credentials or user not found.");
+    globalThis.alert("Invalid credentials or user not found.");
   }
 
   loginForm.reset();
@@ -49,17 +50,18 @@ signupForm.addEventListener("submit", (e) => {
   const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
   if (!name || !email || !password || !confirmPassword) {
-    alert("Please fill out all fields.");
+    globalThis.alert("Please fill out all fields.");
     return;
   }
 
   if (password !== confirmPassword) {
-    alert("Passwords do not match.");
+    password.value = ""; // clear password if no match
+    globalThis.alert("Passwords do not match.");
     return;
   }
 
-  localStorage.setItem("user", JSON.stringify({ name, email, password }));
-  alert("Account created successfully! You can now log in.");
+  globalThis.localStorage.setItem("user", JSON.stringify({ name, email, password }));
+  globalThis.alert("Account created successfully! You can now log in.");
 
   signupForm.reset();
   signupForm.classList.remove("active");
