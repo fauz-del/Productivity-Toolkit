@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To-Do List | Productivity Toolkit</title>
 
   <!-- Font Awesome -->
-  <link
-    rel="preload"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   </noscript>
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="todo.css" />
 </head>
+
 <body>
   <main class="container">
     <!-- ===== Sidebar ===== -->
@@ -33,7 +28,8 @@
       <ul>
         <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span class="link-name">Dashboard</span></a></li>
         <li><a href="#"><i class="fa fa-sticky-note"></i><span class="link-name">Note</span></a></li>
-        <li><a href="todo.html" class="active"><i class="fa fa-list-check"></i><span class="link-name">To-Do List</span></a></li>
+        <li><a href="todo.html" class="active"><i class="fa fa-list-check"></i><span class="link-name">To-Do
+              List</span></a></li>
         <li><a href="#"><i class="fa fa-cloud-sun"></i><span class="link-name">Weather</span></a></li>
         <li><a href="#"><i class="fa fa-chart-line"></i><span class="link-name">App Usage</span></a></li>
       </ul>
@@ -61,9 +57,9 @@
               <button id="addTask"><i class="fas fa-plus"></i></button>
             </div>
 
-           <div class="list">
-            <ul id="taskList" class="task-list"></ul>
-          </div>
+            <div class="list">
+              <ul id="taskList" class="task-list"></ul>
+            </div>
 
             <div class="completed-section">
               <h3><i class="fas fa-check-circle"></i> Completed Tasks</h3>
@@ -85,19 +81,20 @@
       </div>
     </div>
   </div>
-  
+
   <div id="editModal" class="modal hidden">
-  <div class="modal-content">
-    <h3>✏️ Edit Task</h3>
-    <input type="text" id="editInput" placeholder="Update your task..." />
-    <div class="modal-buttons">
-      <button id="confirmEdit" class="btn confirm">Save</button>
-      <button id="cancelEdit" class="btn cancel">Cancel</button>
+    <div class="modal-content">
+      <h3>✏️ Edit Task</h3>
+      <input type="text" id="editInput" placeholder="Update your task..." />
+      <div class="modal-buttons">
+        <button id="confirmEdit" class="btn confirm">Save</button>
+        <button id="cancelEdit" class="btn cancel">Cancel</button>
+      </div>
     </div>
   </div>
-</div>
   <!-- Scripts -->
-  <script src="todo.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="todo.js" defer></script>
+  <script type="module" src="script.js" defer></script>
 </body>
+
 </html>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A modern, all-in-one productivity web app that helps users manage their daily tasks efficiently — including **To-Do Lists**, **Notes**, **Weather Tracking**, and **App Usage Insights**.",
   "main": "script.js",
+  "type": "module",
   "scripts": {
     "start": "node auth_server.js"
   },

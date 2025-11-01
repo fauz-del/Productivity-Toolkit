@@ -90,8 +90,8 @@ globalThis.addEventListener("DOMContentLoaded", () => {
 
   /* ------ Timer Modal ------- */
   confirmTimer.addEventListener("click", () => {
-    const mins = parseInt(timerInput.value);
-    if (!mins || isNaN(mins) || !currentTaskForTimer) return;
+    const mins = Number.parseInt(timerInput.value);
+    if (!mins || Number.isNaN(mins) || !currentTaskForTimer) return;
 
     const { li, timerCircle, progressCircle, timerText } = currentTaskForTimer;
     const totalTime = mins * 60;
