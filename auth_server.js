@@ -12,7 +12,7 @@ const client = createClient({
     url: process.env.database_url
 });
 client.on("error", (error) => {
-    globalThis.alert(error);
+    globalThis.console.log(error);
 
     // console logging it also
     globalThis.console.log("something went wrong " + error);
@@ -25,7 +25,7 @@ app.post("/signup", async (req, res) => {
 
     // check if no exist
     if (!name || !email || !password) {
-        res.status(401).json({ error: "missing fields" });
+       return res.status(401).json({ error: "missing fields" });
     }
 
     await client.set(`user: ${email}`, JSON.stringify({ name, email, password }));
@@ -51,7 +51,8 @@ app.post("/login", async (req, res) => {
     res.json({ message: `welcome back user ${user.name}` });
 });
 
-app.listen(process.env.port, "0.0.0.0", () => {
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, "0.0.0.0", () => {
 
     // logging
     globalThis.console.log("server successfully running");
