@@ -29,7 +29,7 @@ signupForm.addEventListener("submit", async (event) => {
 
   try {
     // axios is nicer to use rather than the plain fetch method
-    const response = await axios.post(" http://127.0.0.1:8080/signup", {
+    const response = await axios.post("https://productivity-toolkit-production.up.railway.app/signup", {
       name,
       email,
       password
@@ -51,7 +51,7 @@ loginForm.addEventListener("submit", async (event) => {
   const password = document.getElementById("loginPassword").value.trim();
 
   try {
-    const response = await axios.post("http://127.0.0.1:8080/login", {
+    const response = await axios.post("https://productivity-toolkit-production.up.railway.app/login", {
       email,
       password
     });
