@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List | Productivity Toolkit</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="preload"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </noscript>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="navbar">
+        <i class="fa fa-bars cursor-pointer" id="menu-icon"></i>
+      </nav>
+
+      <ul>
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span class="link-name">Dashboard</span></a></li>
+        <li><a href="#"><i class="fa fa-sticky-note"></i><span class="link-name">Note</span></a></li>
+        <li><a href="todo.html" class="active"><i class="fa fa-list-check"></i><span class="link-name">To-Do List</span></a></li>
+        <li><a href="#"><i class="fa fa-cloud-sun"></i><span class="link-name">Weather</span></a></li>
+        <li><a href="#"><i class="fa fa-chart-line"></i><span class="link-name">App Usage</span></a></li>
+      </ul>
+      <!-- Music player -->
+      <div class="music-player">
+        <audio id="bg-music" loop>
+          <source src="music/miss korea.mp3" type="audio/mp3" />
+        </audio>
+        <button id="music-toggle"><i class="fa-solid fa-play"></i></button>
+      </div>
+    </aside>
+    <!-- ===== Main Content ===== -->
+    <section class="content">
+      <div class="mode">
+        <button class="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+      </div>
+
+      <div class="main-content">
+        <div class="todo-wrapper">
+          <div class="todo-card">
+            <h2><i class="fas fa-tasks"></i> To-Do List</h2>
+
+            <div class="todo-input">
+              <input type="text" id="taskInput" placeholder="Add a new task..." />
+              <button id="addTask"><i class="fas fa-plus"></i></button>
+            </div>
+
+           <div class="list">
+            <ul id="taskList" class="task-list"></ul>
+          </div>
+
+            <div class="completed-section">
+              <h3><i class="fas fa-check-circle"></i> Completed Tasks</h3>
+              <ul id="completedList" class="completed-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Timer Modal -->
+  <div id="timerModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>⏰ Set Task Timer</h3>
+      <input type="number" id="timerInput" placeholder="Enter time in minutes" min="1" />
+      <div class="modal-actions">
+        <button id="confirmTimer">Start</button>
+        <button id="cancelTimer">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="editModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>✏️ Edit Task</h3>
+    <input type="text" id="editInput" placeholder="Update your task..." />
+    <div class="modal-buttons">
+      <button id="confirmEdit" class="btn confirm">Save</button>
+      <button id="cancelEdit" class="btn cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+  <!-- Scripts -->
+  <script src="todo.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
