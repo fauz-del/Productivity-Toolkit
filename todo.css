@@ -1,0 +1,366 @@
+/* ===== TO-DO LIST PAGE ===== */
+.todo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.todo-card h2 {
+  font-size: 2.5rem;
+  color: var(--panel-color);
+}
+.todo-input {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 0.8rem 9rem;
+  border-radius: 30px;
+  border: 2px solid var(--panel-color);
+  background: var(--text-color);
+  color: var(--panel-color);
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.todo-input input::placeholder {
+  font-size: 1.2rem;
+}
+
+.todo-input button {
+  background: var(--background-color);
+  border: 1px solid var(--panel-color);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.todo-input button i{
+  font-size: 1.5rem;
+}
+
+.todo-input button:hover {
+  opacity: 0.8;
+}
+
+/* Tasks */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--text-color);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: inset 2px 2px 5px var(--button-shadow),
+              inset -2px -2px 5px var(--light-shadow);
+  transition: 0.3s ease;
+  color: var(--panel-color);
+}
+
+.list {
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: 10px;
+  color: #000;
+}
+
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.task-check {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.task-text {
+  color: var(--panel-color);
+  font-size: 1rem;
+}
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Make edit, delete, and timer icons black */
+.task-meta button i,
+.task-meta .timer-text {
+  color: #000; /* black */
+  font-size: 1.2rem;
+}
+
+.task-meta button:hover i {
+  color: #333;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.task-date {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.completed-section{
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.completed-section h3{
+  color: #333;
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Timer circle */
+.timer-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.timer-circle svg {
+  transform: rotate(-90deg);
+  width: 40px;
+  height: 40px;
+}
+
+.timer-circle circle {
+  fill: none;
+  stroke: var(--button-shadow);
+  stroke-width: 4;
+}
+
+.timer-circle .progress {
+  stroke: #333;
+  stroke-width: 4;
+  stroke-dasharray: 113;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-circle .timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Completed section */
+.completed-section {
+  margin-top: 1rem;
+}
+
+.completed-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== TIMER MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 6px 6px 15px var(--button-shadow),
+              -6px -6px 15px var(--light-shadow);
+  text-align: center;
+  width: 90%;
+  max-width: 320px;
+  animation: fadeInScale 0.3s ease;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #333;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions,
+.modal-buttons{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-actions button,
+.btn{
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.modal-actions button:hover {
+  opacity: 0.85;
+}
+
+@keyframes fadeInScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  
+.todo-wrapper {
+  padding: 2rem 0.7rem;
+}
+  
+.todo-card h2 {
+  font-size: 1.3rem;
+}
+
+.todo-input {
+  gap: 0.2rem;
+}
+
+.todo-input input {
+  border: 1px solid var(--panel-color);
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+}
+
+.todo-input input::placeholder {
+  font-size: 1rem;
+}
+
+.todo-input button {
+  padding: 0.4rem 0.5rem;
+  border-radius: 9px;
+}
+
+.todo-input button i{
+  font-size: 1rem;
+  border: none;
+}
+.task-item {
+  padding: 0.7rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.list {
+  margin: 0.5rem;
+}
+
+.task-content {
+  gap: 0.5rem;
+}
+
+.task-check {
+  width: 14px;
+  height: 14px;
+}
+
+.task-meta button i,
+.task-meta .timer-text {
+  font-size: 0.9rem;
+}
+
+.task-text {
+  font-size: 1rem;
+}
+
+.task-date {
+  font-size: 0.4rem;
+}
+
+.task-meta {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+.completed-section h3 {
+  font-size: 1rem;
+}
+
+.completed-section{
+  margin: 0.5rem;
+}
+  
+.modal-content {
+  margin: 2rem;
+  width: 70%;
+  max-width: 320px;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-content input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+}    
+
+
+
