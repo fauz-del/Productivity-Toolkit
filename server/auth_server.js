@@ -7,9 +7,9 @@ dotenv.config();
 const app = express();
 app.use(express.json()); // auto parse incoming req body stuff
 app.use(cors({
-    origin: "https://fauz-del.github.io/Productivity-Toolkit/",
+    origin: "https://fauz-del.github.io",
     methods: ["POST", "GET", "OPTIONS"],
-    allowedHeaders: ["content-type"]
+    allowedHeaders: ["Content-Type"]
 })); // allow cross origin requests from other ports
 
 const client = createClient({
