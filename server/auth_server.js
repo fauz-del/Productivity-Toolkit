@@ -6,7 +6,11 @@ dotenv.config();
 
 const app = express();
 app.use(express.json()); // auto parse incoming req body stuff
-app.use(cors()); // allow cross origin requests from other ports
+app.use(cors({
+    origin: "https://fauz-del.github.io/Productivity-Toolkit/",
+    methods: ["POST", "GET", "OPTIONS"],
+    allowedHeaders: ["content-type"]
+})); // allow cross origin requests from other ports
 
 const client = createClient({
     url: process.env.database_url
@@ -25,7 +29,7 @@ app.post("/signup", async (req, res) => {
 
     // check if no exist
     if (!name || !email || !password) {
-       return res.status(401).json({ error: "missing fields" });
+        return res.status(401).json({ error: "missing fields" });
     }
 
     await client.set(`user: ${email}`, JSON.stringify({ name, email, password }));
