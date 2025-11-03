@@ -21,9 +21,9 @@ const errorText = document.getElementById("errorText");
 const errorImage = document.getElementById("errorImage");
 const historyList = document.getElementById("historyList");
 
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click", async () => {
   const city = cityInput.value.trim();
-  if (city) getWeather(city);
+  if (city) await getWeather(city);
 });
 
 async function getWeather(city) {
