@@ -1,0 +1,256 @@
+.note-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+.search {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  height: 35px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search input {
+  position: absolute;
+  border: 1px solid var(--border-color);
+  background-color: var(--text-color);
+  padding: 0 25px 0 50px;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  color: var(--panel-color);
+  font-weight: 500;
+  outline: none;
+}
+
+.search i {
+  position: absolute;
+  left: 15px;
+  font-size: 22px;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--panel-color);
+}
+.note-add {
+  background: var(--background-color);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.1), -6px -6px 15px rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: fit-content;
+}
+
+.note-add input,
+.note-add textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--background-color);
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1), inset -3px -3px 6px rgba(255,255,255,0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  resize: none;
+  color: #000;
+}
+
+.note-add button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background: var(--text-color);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1), -4px -4px 8px rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-weight: bold;
+  color: #ff4d6d;
+  transition: all 0.3s ease;
+}
+
+.note-add button:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.15), -6px -6px 12px rgba(255,255,255,0.8);
+}
+
+.note-list {
+  background: var(--background-color);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.1),
+              -6px -6px 15px rgba(255,255,255,0.7);
+  flex: 1;
+  max-height: 65vh;
+  overflow-y: auto; 
+}
+
+.note-list h3 {
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.note-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note-list li {
+  background: var(--background-color);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1),
+              inset -3px -3px 6px rgba(255,255,255,0.7);
+  position: relative;
+}
+
+.note-list li h4 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.note-list li p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.note-actions button {
+  background: #ff4d6d;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.note-actions .edit-btn{
+  background: forestgreen;
+}
+
+.note-actions button:hover {
+  background: #e03b5c;
+  transform: scale(1.1);
+}
+
+.delete-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.delete-modal.show {
+  display: flex;
+}
+
+.delete-modal-content {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+}
+
+.delete-modal-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.delete-modal-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.delete-modal-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#cancelDelete {
+  background: #ccc;
+  color: #333;
+}
+
+#confirmDelete {
+  background: #ff4d6d;
+  color: white;
+}
+
+#confirmDelete:hover {
+  background: #e03b5c;
+}
+
+
+@media (max-width: 768px) {
+  .note-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .search {
+    position: relative;
+    top: 25px;
+    left: 10px;
+    height: 30px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .note-add {
+    width: 100%;
+    flex: none;
+  }
+
+  .note-list {
+    max-height: 65vh;
+}
+
+.delete-modal-content{
+  width: 70%;
+}
+}
