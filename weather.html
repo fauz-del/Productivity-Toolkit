@@ -20,10 +20,10 @@
       
       <ul>
         <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span class="link-name">Dashboard</span></a></li>
-        <li><a href="#"><i class="fa fa-sticky-note"></i><span class="link-name">Note</span></a></li>
+        <li><a href="note.html"><i class="fa fa-sticky-note"></i><span class="link-name">Note</span></a></li>
         <li><a href="todo.html"><i class="fa fa-list-check"></i><span class="link-name">To-Do List</span></a></li>
         <li><a href="weather.html" class="active"><i class="fa fa-cloud-sun"></i><span class="link-name">Weather</span></a></li>
-        <li><a href="#"><i class="fa fa-chart-line"></i><span class="link-name">App Usage</span></a></li>
+        <li><a href="app_usage.html"><i class="fa fa-chart-line"></i><span class="link-name">App Usage</span></a></li>
       </ul>
       
       <div class="music-player">
@@ -34,22 +34,18 @@
       </div>
     </aside>
     
-    <!-- Main Content -->
     <section class="content">
       <div class="mode">
         <button class="mode-toggle"><i class="fa-solid fa-moon"></i></button>
       </div>
       
       <div class="weather-layout">
-        <!-- Left: Main weather and details -->
         <div class="weather-container">
-          <!-- Search bar -->
           <div class="search-bar">
             <input type="text" id="cityInput" placeholder="Enter city name..." />
             <button id="searchBtn"><i class="fa fa-search"></i></button>
           </div>
           
-          <!-- Weather info -->
           <div class="weather-main">
             <img id="weatherImage" src="./assets/weather/default.png" alt="Weather image" />
             <div class="weather-info">
@@ -64,7 +60,6 @@
             </div>
           </div>
           
-          <!-- Extra weather info cards -->
           <div class="weather-details">
             <div class="detail-card">
               <i class="fa-solid fa-cloud"></i>
@@ -98,14 +93,12 @@
             </div>
           </div>
           
-          <!-- Detailed explanation -->
           <div class="weather-explanation">
             <h3>Weather Summary</h3>
             <p id="weatherSummary">Enter a location to get detailed weather information.</p>
           </div>
         </div>
         
-        <!-- Right: Weather History -->
         <aside class="weather-history">
           <h3>Recent Searches</h3>
           <ul id="historyList">
@@ -118,6 +111,6 @@
   
   <script src="weather.js"></script>
   <script src="script.js"></script>
+  <script> initAppUsage("Weather"); </script>
 </body>
-
 </html>
