@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>App Usage</title>
+    <link
+    rel="preload"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  </noscript>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="app_usage.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+  
+    <aside class="sidebar" id="sidebar">
+      <nav class="navbar">
+        <i class="fa fa-bars cursor-pointer" id="menu-icon"></i>
+      </nav>
+      <ul>
+        <li><a href="dashboard.html"><i class="fa fa-house"></i><span>Dashboard</span></a></li>
+        <li><a href="note.html"><i class="fa fa-sticky-note"></i><span>Note</span></a></li>
+        <li><a href="todo.html"><i class="fa fa-list-check"></i><span>To-Do</span></a></li>
+        <li><a href="weather.html"><i class="fa fa-cloud-sun"></i><span>Weather</span></a></li>
+        <li><a href="app_usage.html"><i class="fa fa-chart-line"></i><span>App Usage</span></a></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div class="mode">
+        <button class="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+      </div>
+
+   <div class="appusage-content">  
+      <header class="top-bar usage-top">
+        <div class="datetime">
+          <i class="fa fa-chart-line"></i>
+          <h2>App Usage Overview</h2>
+          <p>Monitor how you interact with your tools</p>
+        </div>
+      </header>
+
+      <div class="usage-charts">
+        <div class="chart-card">
+          <h3>Usage Distribution</h3>
+          <div class="pie-wrapper">
+            <canvas id="usagePie"></canvas>
+            <div class="pie-center"><h4 id="totalHours">0h</h4><p>Total</p></div>
+          </div>
+          <div class="legend">
+            <div><span class="dot todo"></span> To-Do</div>
+            <div><span class="dot note"></span> Notes</div>
+            <div><span class="dot weather"></span> Weather</div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Monthly Activity</h3>
+          <canvas id="usageLine"></canvas>
+        </div>
+      </div>
+    
+    <section class="usage-cards">
+      <div class="insight-card" data-page="Dashboard">
+       <div class="card-head"><strong>Dashboard</strong></div>
+       <div class="card-brief" id="insight-Dashboard">Loading...</div>
+       <div class="card-more" id="more-Dashboard" hidden></div>
+      </div>
+
+      <div class="insight-card" data-page="ToDo">
+       <div class="card-head"><strong>To-Do</strong></div>
+       <div class="card-brief" id="insight-ToDo">Loading...</div>
+       <div class="card-more" id="more-ToDo" hidden></div>
+      </div>
+
+      <div class="insight-card" data-page="Note">
+       <div class="card-head"><strong>Note</strong></div>
+       <div class="card-brief" id="insight-Note">Loading...</div>
+       <div class="card-more" id="more-Note" hidden></div>
+      </div>
+   </section>
+
+     <section class="usage-entries">
+      <h3>Recent Activity</h3>
+      <ul id="usageEntries"></ul>
+     </section>
+    
+    </section>
+   </div>
+  </main>
+  
+  <script src="app_usage.js"></script>
+  <script src="script.js"></script>
+  <script src="usage-tracker.js"></script>
+<script>
+  initAppUsage("Dashboard");
+</script>
+</body>
+</html>
