@@ -6,27 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Productivity-Toolkit Dashboard</title>
 
-  <!-- Font Awesome -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   </noscript>
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="container">
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <nav class="navbar">
         <i class="fa fa-bars cursor-pointer" id="menu-icon"></i>
       </nav>
-
 
       <ul>
         <li><a href="dashboard.html">
@@ -41,11 +35,11 @@
             <i class="fa fa-list-check"></i>
             <span class="link-name">To-do list</span>
           </a></li>
-        <li><a href="#">
+        <li><a href="weather.html">
             <i class="fa fa-cloud-sun"></i>
             <span class="link-name">Weather</span>
           </a></li>
-        <li><a href="#">
+        <li><a href="app_usage.html">
             <i class="fa fa-chart-line"></i>
             <span class="link-name">App Usage</span>
           </a></li>
@@ -53,18 +47,14 @@
 
       <div class="music-player">
         <audio id="bg-music" loop>
-          <source src="/Productivity-kit /music/miss korea.mp3">
-
+          <source src="miss korea.mp3">
         </audio>
         <button id="music-toggle">
           <i class="fa-solid fa-play"></i>
         </button>
       </div>
-
-
     </aside>
 
-    <!-- Main Content -->
     <section class="content">
       <nav class="nav">
         <div class="search-box">
@@ -79,16 +69,12 @@
         </button>
       </div>
 
-
       <header class="top-bar">
         <div class="datetime">
           <h2 id="time"></h2>
           <p id="date"></p>
         </div>
       </header>
-
-
-
 
       <div class="apps">
         <h2>Apps</h2>
@@ -133,12 +119,10 @@
             </tr>
           </thead>
           <tbody id="calendar-body">
-            <!-- JavaScript will populate days -->
           </tbody>
         </table>
       </div>
-
-      <!-- Motivational Quote -->
+        
       <div class="quote card">
         <h3 class="quote-header">Motivational Quote</h3>
         <p id="quote-text">Loading inspirational quote...</p>
@@ -147,9 +131,11 @@
 
     </section>
   </main>
-
-  <!-- JavaScript -->
+  
   <script src="script.js"></script>
+  <script>
+  initAppUsage("Dashboard", ["Dashboard","ToDo","Note"]);
+  </script>
 </body>
 
 </html>
